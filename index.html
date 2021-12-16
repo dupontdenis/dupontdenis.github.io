@@ -1,14 +1,112 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AAAA</title>
+    <style>
+        :root {
+  --primary-color: #5a29e4;
+  --primary-shadow-color: #5b29e45d;
+  --secondary-color: #d442c6;
+  --fg-color: #1f1c24;
+  --margin: 60px;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+  font-size: 5px;
+}
+  .code-preview {
+  font-size: 18px;
+  padding: 2rem 4rem;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
 
-</head>
-<body>
-branche
+  max-width: 343px;
+  width: 100%;
+  height: 157px;
+}
 
-</body>
+.code-preview pre {
+  display: inline;
+}
+
+.code-preview span {
+  font-family: var(--font-mono);
+}
+
+.code-preview span.p {
+  font-weight: var(--fw-bold);
+  color: var(--primary-color);
+}
+
+.code-preview span.s {
+  color: var(--secondary-color);
+}
+
+.code-preview span.i {
+  font-style: italic;
+}
+    </style>
+
+
+   </head>
+  <body>
+    <header>
+
+    </header>
+    <main>
+
+
+        <div class="code-preview">
+          <pre></pre>  <span class="typed-cursor" aria-hidden="true">|</span>
+        </div>
+      
+      </section>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+      const options = {
+        strings: [`<span class="p">import</span> <span>axios</span> <span class="p">from</span> <span class="s">"axios"</span><span>;</span><br/><span>axios.</span><span class="p">get</span><span>(</span><span class="s">'/users'</span><span>)</span><br/>  <span class="p">.then</span><span>(</span><span class="s i">res</span><span class="p"> => </span><span>{</span><br/>    <span>console.</span><span class="p">log</span><span>(</span><span class="s i">res</span><span>.data</span><span>);</span><br/>  <span>});</span>`],
+        typeSpeed: 40,
+        onComplete: async () => {
+          await sleep(3000)
+          document.querySelector('.typed-cursor').remove()
+        },
+      };
+
+      const typed = new Typed('.code-preview pre', options);
+    </script>
+    <style type="text/css" data-typed-js-css="true">
+        .typed-cursor{
+          opacity: 1;
+        }
+        .typed-cursor.typed-cursor--blink{
+          animation: typedjsBlink 0.7s infinite;
+          -webkit-animation: typedjsBlink 0.7s infinite;
+                  animation: typedjsBlink 0.7s infinite;
+        }
+        @keyframes typedjsBlink{
+          50% { opacity: 0.0; }
+        }
+        @-webkit-keyframes typedjsBlink{
+          0% { opacity: 1; }
+          50% { opacity: 0.0; }
+          100% { opacity: 1; }
+        }
+      </style>
+  </body>
 </html>
